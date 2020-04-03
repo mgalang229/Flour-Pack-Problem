@@ -12,7 +12,10 @@ class Flour{
 			} else if (total >= goal){
 				if(goal < newBigCount && smallCount == 0){
           checker = false;
-        } else{
+        } else if(bigCount % 5 == 0 && bigCount != 0){
+	        checker = false;
+	      } 
+        else{
           checker = true;
         }
 			} else if (total < goal){
@@ -25,8 +28,11 @@ int main(){
 	Flour fl;
 	cout << fl.canPack(1, 0, 4) << endl;		
 	cout << fl.canPack(1, 0, 5) << endl;
+  cout << fl.canPack(0, 5, 4) << endl;
 	cout << fl.canPack(2, 2, 11) << endl;
 	cout << fl.canPack(-3, 2, 12) << endl;
+  cout << fl.canPack(5, 3, 24) << endl;
+  cout << fl.canPack(2, 1, 5) << endl;
 	cout << endl;
 	return 0;
 }
